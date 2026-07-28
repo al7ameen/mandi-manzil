@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== PRIMARY SEO ===== -->
+    <title>Mandi Manzil — Authentic Arabic Mandi Since 2016 | Kerala</title>
+    <meta
+      name="description"
+      content="Mandi Manzil – Kerala's Original Destination for Authentic Arabic Mandi Since 2016. Slow-cooked, wood-fired Mandi across 11 locations in Kerala."
+    />
+    <meta
+      name="keywords"
+      content="Mandi Manzil, Arabic Mandi Kerala, Chicken Mandi Kerala, Mutton Mandi, Mandi restaurant Kozhikode, Mandi Thiruvananthapuram, Mandi Kollam, Mandi Thrissur, best mandi Kerala, authentic mandi Kerala"
+    />
+    <meta name="author" content="Mandi Manzil" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ===== GEO TAGS (Local SEO) ===== -->
+    <meta name="geo.region" content="IN-KL" />
+    <meta name="geo.placename" content="Kerala, India" />
+
+    <!-- ===== OPEN GRAPH (WhatsApp, Facebook previews) ===== -->
+    <meta
+      property="og:title"
+      content="Mandi Manzil – Authentic Arabic Mandi Since 2016"
+    />
+    <meta
+      property="og:description"
+      content="Kerala's most loved Arabic Mandi restaurant. Authentic flavors, premium ingredients, warm hospitality across 11 locations."
+    />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content="https://www.mandimanzil.com" />
+    <meta
+      property="og:image"
+      content="https://www.mandimanzil.com/images/hero-bg.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Mandi Manzil" />
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Mandi Manzil – Authentic Arabic Mandi Since 2016"
+    />
+    <meta
+      name="twitter:description"
+      content="Kerala's most loved Arabic Mandi restaurant across 11 locations."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.mandimanzil.com/images/hero-bg.jpg"
+    />
+
+    <!-- ===== BROWSER & MOBILE ===== -->
+    <meta name="theme-color" content="#C9A84C" />
+    <link rel="icon" type="image/webp" href="images/favicon.jpg" />
+    <link rel="apple-touch-icon" href="images/logo.webp" />
+
+    <!-- ===== SCHEMA JSON-LD (Google Rich Results) ===== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Mandi Manzil",
+        "description": "Kerala's Original Destination for Authentic Arabic Mandi Since 2016.",
+        "url": "https://www.mandimanzil.com",
+        "logo": "https://www.mandimanzil.com/images/logo.webp",
+        "image": "https://www.mandimanzil.com/images/hero-bg.jpg",
+        "foundingDate": "2016",
+        "servesCuisine": "Arabic, Middle Eastern",
+        "priceRange": "$$",
+        "telephone": "+916235022055",
+        "email": "info@mandimanzil.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Opposite BSNL, Cheruvannur",
+          "addressLocality": "Calicut",
+          "addressRegion": "Kerala",
+          "postalCode": "673027",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.facebook.com/mandimanzil",
+          "https://www.instagram.com/mandimanzil"
+        ]
+      }
+    </script>
+
+    <!-- ===== CSS FILES ===== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+
+    <!-- Leaflet Map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== LOADING SCREEN ===== -->
+    <div class="loader" id="loader">
+      <img src="images/logo.png" alt="Mandi Manzil" class="loader-logo" />
+      <div class="loader-bar-wrapper">
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-text">Preparing your experience</p>
+    </div>
+
+    <!-- ================================================
+         NAVBAR
+    ================================================ -->
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img
+            src="images/logo.png"
+            alt="Mandi Manzil Logo"
+            onerror="this.style.display = 'none'"
+          />
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#branches">Branches</a></li>
+          <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+        </ul>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ================================================
+         MAIN CONTENT
+    ================================================ -->
+    <main>
+      <!-- ===== HERO SECTION ===== -->
+      <section class="hero" id="home">
+        <!-- Background Image -->
+        <div class="hero-bg" id="heroBg"></div>
+
+        <!-- Dark Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Main Content -->
+        <div class="hero-content">
+          <!-- "Since 2016" label -->
+          <p class="hero-eyebrow">Mandi Manzil &nbsp;·&nbsp; Since 2016</p>
+
+          <!-- Main Headline -->
+          <h1 class="hero-title">
+            <span class="block">Timeless Tastes,</span>
+            <span class="block italic">Shared Traditions</span>
+          </h1>
+
+          <!-- Tagline -->
+          <p class="hero-tagline">Taste the Tradition. Feel the Fusion.</p>
+
+          <!-- Gold Line -->
+          <div class="hero-divider"></div>
+
+          <!-- Short Description -->
+          <p class="hero-description">
+            Kerala's Original Destination for Authentic Arabic Mandi Since 2016.
+            We don't just serve food — we serve tradition, hospitality, and an
+            unforgettable culinary experience.
+          </p>
+
+          <!-- Buttons -->
+          <div class="hero-buttons">
+            <a href="#menu" class="btn-secondary">Explore Our Menu</a>
+            <a href="#contact" class="btn-primary">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="scroll-arrow"></div>
+        </div>
+
+        <!-- Stats Bar at the bottom -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">2016</span>
+            <span class="stat-label">Established</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">11</span>
+            <span class="stat-label">Branches Across Kerala</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Signature Dishes</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT SECTION ===== -->
+      <section class="section about" id="about">
+        <div class="container">
+          <div class="about-container">
+            <!-- LEFT SIDE: Text Content -->
+            <div class="about-content">
+              <h2>Our <span class="gold">Story</span></h2>
+
+              <p class="about-intro">
+                We don't just serve food – we serve tradition, hospitality, and
+                an unforgettable culinary experience.
+              </p>
+
+              <p class="about-text">
+                Mandi Manzil was born out of a deep admiration for the rich,
+                aromatic, and soulful dish known as Mandi – a traditional Arabic
+                rice and meat preparation that originated in Yemen and spread
+                across the Middle East. We wanted to offer an experience that
+                stayed true to its origins while also appealing to the local
+                palate. With that vision, we set out on a mission to be Kerala's
+                go-to destination for real, slow-cooked, wood-fired Mandi.
+              </p>
+
+              <p class="about-text">
+                What started as a humble venture has now grown into a
+                well-recognized name across Kerala, loved by thousands of loyal
+                customers. Our consistency in taste, hygiene, and hospitality
+                has been the secret ingredient to our success.
+              </p>
+
+              <!-- Three Pillars -->
+              <div class="about-pillars">
+                <!-- Pillar 1 -->
+                <div class="pillar fade-up">
+                  <div class="pillar-number">01</div>
+                  <div class="pillar-text">
+                    <h3>Authentic Preparation</h3>
+                    <p>
+                      Every dish is prepared using time-honored techniques,
+                      traditional spices, and slow-cooking methods that bring
+                      out the rich flavors of Arabian cuisine.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar fade-up">
+                  <div class="pillar-number">02</div>
+                  <div class="pillar-text">
+                    <h3>Premium Ingredients</h3>
+                    <p>
+                      We use only the finest cuts of meat, long-grain basmati
+                      rice, and a carefully curated blend of spices for that
+                      signature Mandi aroma and taste.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar fade-up">
+                  <div class="pillar-number">03</div>
+                  <div class="pillar-text">
+                    <h3>Ambience & Hospitality</h3>
+                    <p>
+                      At Mandi Manzil, we strive to create a warm,
+                      family-friendly atmosphere that reflects the true spirit
+                      of Arabian dining.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <div class="about-cta">
+                <p>Ready to experience authentic Arabic Mandi?</p>
+                <a href="#menu" class="btn-secondary">Explore Our Menu</a>
+              </div>
+            </div>
+
+            <!-- RIGHT SIDE: Image -->
+            <div class="about-image fade-up">
+              <img
+                src="images/about-img.webp"
+                alt="Mandi Manzil Restaurant Ambience"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- PROMISE SECTION -->
+          <div class="promise fade-up">
+            <h3>
+              Authentic Arabic Mandi,
+              <span class="italic">Served with Heart Since 2016</span>
+            </h3>
+            <p>
+              Whether you're dining in with friends and family or ordering
+              online, we promise to deliver the same quality, flavor, and
+              experience every time. At Mandi Manzil, we believe great food
+              brings people together – and we are proud to be a part of your
+              moments, big and small.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM SECTION -->
+      <div class="team fade-up">
+        <div class="team-header">
+          <span class="section-eyebrow">The People Behind the Food</span>
+          <h2 class="section-title">Meet Our <span>Core Team</span></h2>
+          <div class="gold-divider" style="margin: 1.5rem auto"></div>
+          <p>
+            Get to know the culinary minds behind our kitchen. Our passionate
+            team of chefs and founders is dedicated to bringing you the most
+            authentic and flavorful Mandi experience in Kerala.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card fade-up">
+            <div class="team-avatar">
+              <img src="images/team-razaq.webp" alt="Razaq" />
+            </div>
+            <h3>Razaq</h3>
+            <span>Managing Partner</span>
+          </div>
+
+          <div class="team-card fade-up fade-up-delay-1">
+            <div class="team-avatar">
+              <img src="images/team-muneer.webp" alt="Muneer" />
+            </div>
+            <h3>Muneer</h3>
+            <span>Managing Partner</span>
+          </div>
+
+          <div class="team-card fade-up fade-up-delay-2">
+            <div class="team-avatar">
+              <img src="images/team-munavvar.webp" alt="Munavvar" />
+            </div>
+            <h3>Munavvar</h3>
+            <span>Managing Partner</span>
+          </div>
+
+          <div class="team-card fade-up fade-up-delay-3">
+            <div class="team-avatar">
+              <img src="images/team-ajmal.webp" alt="Ajmal" />
+            </div>
+            <h3>Ajmal</h3>
+            <span>Managing Partner</span>
+          </div>
+
+          <div class="team-card fade-up fade-up-delay-4">
+            <div class="team-avatar">
+              <img src="images/team-mishab.webp" alt="Mishab" />
+            </div>
+            <h3>Mishab</h3>
+            <span>Managing Partner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MENU SECTION ===== -->
+      <section class="section menu" id="menu">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="menu-header fade-up">
+            <span class="section-eyebrow">What We Serve</span>
+            <h2 class="section-title">Chef's <span>Special</span> Picks</h2>
+            <div class="gold-divider" style="margin: 1.5rem auto"></div>
+            <p class="section-subtitle">
+              Explore our handpicked selection of premium Mandi dishes, crafted
+              with signature spices, rich flavors, and authentic Arabian flair.
+            </p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div
+            class="menu-tabs fade-up"
+            role="tablist"
+            aria-label="Filter menu by category"
+          >
+            <button class="menu-tab active" data-filter="all">All</button>
+            <button class="menu-tab" data-filter="classic">Classic</button>
+            <button class="menu-tab" data-filter="fusion">Fusion</button>
+            <button class="menu-tab" data-filter="spicy">Spicy</button>
+          </div>
+
+          <!-- Menu Cards Grid -->
+          <div class="menu-grid">
+            <!-- Card 1: Chicken Mandi -->
+            <div class="menu-card fade-up" data-category="classic">
+              <div class="menu-card-img">
+                <img
+                  src="images/chicken-mandi.jpg"
+                  alt="Chicken Mandi"
+                  loading="lazy"
+                />
+                <span class="menu-badge">Classic</span>
+              </div>
+              <div class="menu-card-body">
+                <h3>Chicken Mandi</h3>
+                <p>
+                  A fragrant Arabian rice dish with tender spiced chicken and
+                  smoky flavors, served with traditional flair.
+                </p>
+                <span class="menu-card-tag">Classic · Arabic</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Mutton Mandi -->
+            <div
+              class="menu-card fade-up fade-up-delay-1"
+              data-category="classic"
+            >
+              <div class="menu-card-img">
+                <img
+                  src="images/mutton-mandi.jpg"
+                  alt="Mutton Mandi"
+                  loading="lazy"
+                />
+                <span class="menu-badge">Classic</span>
+              </div>
+              <div class="menu-card-body">
+                <h3>Mutton Mandi</h3>
+                <p>
+                  A flavorful rice dish with juicy, slow-cooked mutton and rich
+                  Arabic spices, served with an authentic smoky touch.
+                </p>
+                <span class="menu-card-tag">Classic · Arabic</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Beef Mandi -->
+            <div
+              class="menu-card fade-up fade-up-delay-2"
+              data-category="classic"
+            >
+              <div class="menu-card-img">
+                <img
+                  src="images/beef-mandi.jpg"
+                  alt="Beef Mandi"
+                  loading="lazy"
+                />
+                <span class="menu-badge">Classic</span>
+              </div>
+              <div class="menu-card-body">
+                <h3>Beef Mandi</h3>
+                <p>
+                  A hearty Arabic rice dish with tender, spiced beef slow-cooked
+                  to perfection and served with smoky, fragrant rice.
+                </p>
+                <span class="menu-card-tag">Classic · Arabic</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Spicy Mandi -->
+            <div class="menu-card fade-up" data-category="spicy">
+              <div class="menu-card-img">
+                <img
+                  src="images/spicy-mandi.jpg"
+                  alt="Spicy Mandi"
+                  loading="lazy"
+                />
+                <span
+                  class="menu-badge"
+                  style="background: #e74c3c; color: white"
+                  >🌶 Spicy</span
+                >
+              </div>
+              <div class="menu-card-body">
+                <h3>Spicy Mandi</h3>
+                <p>
+                  A bold twist on the classic, featuring tender meat, aromatic
+                  rice, and an extra kick of fiery Arabic spices.
+                </p>
+                <span class="menu-card-tag">Spicy · Arabic</span>
+              </div>
+            </div>
+
+            <!-- Card 5: Alfaham Mandi -->
+            <div
+              class="menu-card fade-up fade-up-delay-1"
+              data-category="fusion"
+            >
+              <div class="menu-card-img">
+                <img
+                  src="images/alfaham-mandi.jpg"
+                  alt="Alfaham Mandi"
+                  loading="lazy"
+                />
+                <span class="menu-badge" style="background: #8b6914"
+                  >Fusion</span
+                >
+              </div>
+              <div class="menu-card-body">
+                <h3>Alfaham Mandi</h3>
+                <p>
+                  A delicious fusion of juicy grilled chicken and fragrant
+                  spiced rice — a smoky, flavorful twist on the classic.
+                </p>
+                <span class="menu-card-tag">Fusion · Grilled</span>
+              </div>
+            </div>
+
+            <!-- Card 6: Peri Peri Mandi -->
+            <div
+              class="menu-card fade-up fade-up-delay-2"
+              data-category="fusion spicy"
+            >
+              <div class="menu-card-img">
+                <img
+                  src="images/peri-peri-mandi.jpg"
+                  alt="Peri Peri Mandi"
+                  loading="lazy"
+                />
+                <span
+                  class="menu-badge"
+                  style="background: #e74c3c; color: white"
+                  >🌶 Fusion</span
+                >
+              </div>
+              <div class="menu-card-body">
+                <h3>Peri Peri Mandi</h3>
+                <p>
+                  A spicy fusion of Arabic rice and tender meat tossed in zesty
+                  Peri Peri sauce for a bold, fiery flavor.
+                </p>
+                <span class="menu-card-tag">Fusion · Spicy</span>
+              </div>
+            </div>
+
+            <!-- Card 7: Honey Chilly Mandi -->
+            <div class="menu-card fade-up" data-category="fusion">
+              <div class="menu-card-img">
+                <img
+                  src="images/honey-chilly-mandi.jpg"
+                  alt="Honey Chilly Mandi"
+                  loading="lazy"
+                />
+                <span class="menu-badge" style="background: #8b6914"
+                  >Fusion</span
+                >
+              </div>
+              <div class="menu-card-body">
+                <h3>Honey Chilly Mandi</h3>
+                <p>
+                  Blends sweet and spicy flavors with tender meat, aromatic
+                  rice, and a drizzle of honey chili glaze for a bold fusion
+                  twist.
+                </p>
+                <span class="menu-card-tag">Fusion · Sweet & Spicy</span>
+              </div>
+            </div>
+
+            <!-- Card 8: Green Chilly Mandi -->
+            <div
+              class="menu-card fade-up fade-up-delay-1"
+              data-category="spicy"
+            >
+              <div class="menu-card-img">
+                <img
+                  src="images/green-chilly-mandi.jpg"
+                  alt="Green Chilly Mandi"
+                  loading="lazy"
+                />
+                <span
+                  class="menu-badge"
+                  style="background: #27ae60; color: white"
+                  >🌿 Spicy</span
+                >
+              </div>
+              <div class="menu-card-body">
+                <h3>Green Chilly Mandi</h3>
+                <p>
+                  A fiery blend of tender meat, aromatic rice, and bold green
+                  chilli spice — crafted for those who crave real flavor with a
+                  kick.
+                </p>
+                <span class="menu-card-tag">Spicy · Bold</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sizes Section -->
+          <div class="menu-sizes fade-up">
+            <h3>Available in <span>Every Size</span></h3>
+            <p>Perfect for solo dining, couples, or group celebrations</p>
+            <div class="gold-divider" style="margin: 1rem auto"></div>
+
+            <div class="sizes-grid">
+              <div class="size-item">
+                <div class="size-icon">🍽️</div>
+                <h4>Quarter</h4>
+                <p>Serves 1 Person</p>
+              </div>
+              <div class="size-item">
+                <div class="size-icon">🍽️🍽️</div>
+                <h4>Half</h4>
+                <p>Serves 2 Persons</p>
+              </div>
+              <div class="size-item">
+                <div class="size-icon">🍽️🍽️🍽️🍽️</div>
+                <h4>Full</h4>
+                <p>Serves 4 Persons</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- View Full Menu Button -->
+          <div class="menu-footer fade-up">
+            <p>Unlimited rice available with every order</p>
+            <a href="#menu" class="btn-primary">View Our Full Menu</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- UPDATED BRANCHES HTML WITH IMAGES -->
+
+      <section class="section branches" id="branches">
+        <div class="container">
+          <!-- Section Header -->
+          <div class="branches-header fade-up">
+            <span class="section-eyebrow">Where to Find Us</span>
+            <h2 class="section-title">
+              Find Your Nearest <span>Mandi Manzil</span>
+            </h2>
+            <div class="gold-divider" style="margin: 1.5rem auto"></div>
+            <p class="section-subtitle">
+              11 locations across Kerala — from Kozhikode to Thiruvananthapuram.
+              Authentic Mandi is always close to you.
+            </p>
+          </div>
+
+          <!-- Map + Cards Layout -->
+          <div class="branches-layout">
+            <!-- LEFT: Interactive Map -->
+            <div class="map-wrapper fade-up">
+              <div
+                id="branches-map"
+                role="application"
+                aria-label="Map of Mandi Manzil branch locations across Kerala"
+              ></div>
+            </div>
+
+            <!-- RIGHT: Branch Cards List -->
+            <div class="branches-list fade-up fade-up-delay-1">
+              <!-- Branch 1 -->
+              <div class="branch-card" data-index="0">
+                <img
+                  src="images/branch-1.webp"
+                  alt="Mandi Manzil Calicut"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">1</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Calicut</h3>
+                    <p class="branch-district">Kozhikode</p>
+                    <p class="branch-address">
+                      Opposite BSNL, Cheruvannur, Calicut, Kerala 673027
+                    </p>
+                    <a href="tel:+916235022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 62350 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 2 -->
+              <div class="branch-card" data-index="1">
+                <img
+                  src="images/branch-2.webp"
+                  alt="Mandi Manzil Kaipamangalam"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">2</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Kaipamangalam</h3>
+                    <p class="branch-district">Thrissur</p>
+                    <p class="branch-address">
+                      Panvel–Kochi–Kanyakumari Hwy, Kaipamangalam, Kerala 680681
+                    </p>
+                    <a href="tel:+918138022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 81380 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 3 -->
+              <div class="branch-card" data-index="2">
+                <img
+                  src="images/branch-3.webp"
+                  alt="Mandi Manzil Chalakkudy"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">3</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Chalakkudy</h3>
+                    <p class="branch-district">Thrissur</p>
+                    <p class="branch-address">
+                      Near D Cinemas, South Chalakudy, Thrissur, Kerala 680307
+                    </p>
+                    <a href="tel:+917593022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 75930 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 4 -->
+              <div class="branch-card" data-index="3">
+                <img
+                  src="images/branch-4.webp"
+                  alt="Mandi Manzil Perambra"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">4</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Perambra</h3>
+                    <p class="branch-district">Thrissur</p>
+                    <p class="branch-address">
+                      Kochi–Selam Highway, NH544, Perambra, Thrissur, Kerala
+                      680689
+                    </p>
+                    <a href="tel:+919562022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 95620 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 5 -->
+              <div class="branch-card" data-index="4">
+                <img
+                  src="images/branch-5.webp"
+                  alt="Mandi Manzil Kazhakootam"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">5</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Kazhakootam</h3>
+                    <p class="branch-district">Thiruvananthapuram</p>
+                    <p class="branch-address">
+                      Near Nippon Toyota, Kazhakootam, Thiruvananthapuram,
+                      Kerala 695582
+                    </p>
+                    <a href="tel:+918592022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 85920 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 6 -->
+              <div class="branch-card" data-index="5">
+                <img
+                  src="images/branch-6.webp"
+                  alt="Mandi Manzil Mettukada"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">6</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Mettukada</h3>
+                    <p class="branch-district">Thiruvananthapuram</p>
+                    <p class="branch-address">
+                      Mettukada Jn, Thampanoor, Thiruvananthapuram, Kerala
+                      695014
+                    </p>
+                    <a href="tel:+919544022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 95440 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 7 -->
+              <div class="branch-card" data-index="6">
+                <img
+                  src="images/branch-7.webp"
+                  alt="Mandi Manzil Ulloor"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">7</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Ulloor</h3>
+                    <p class="branch-district">Thiruvananthapuram</p>
+                    <p class="branch-address">
+                      Medical College Ulloor Rd, Ulloor, Thiruvananthapuram,
+                      Kerala 695011
+                    </p>
+                    <a href="tel:+918589022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 85890 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 8 -->
+              <div class="branch-card" data-index="7">
+                <img
+                  src="images/branch-8.webp"
+                  alt="Mandi Manzil Karyavattom"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">8</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Karyavattom</h3>
+                    <p class="branch-district">Thiruvananthapuram</p>
+                    <p class="branch-address">
+                      Karyavattom Rd, Ambalathinkara, Thiruvananthapuram, Kerala
+                      695582
+                    </p>
+                    <a href="tel:+919207022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 92070 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 9 -->
+              <div class="branch-card" data-index="8">
+                <img
+                  src="images/branch-9.webp"
+                  alt="Mandi Manzil Kadappakada"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">9</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Kadappakada</h3>
+                    <p class="branch-district">Kollam</p>
+                    <p class="branch-address">
+                      SV Talkies Jn, Priyadarshini Nagar, Kadapakkada, Kollam,
+                      Kerala 691019
+                    </p>
+                    <a href="tel:+918943022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 89430 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 10 -->
+              <div class="branch-card" data-index="9">
+                <img
+                  src="images/branch-10.webp"
+                  alt="Mandi Manzil Mevaram"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">10</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Mevaram</h3>
+                    <p class="branch-district">Kollam</p>
+                    <p class="branch-address">
+                      Vazhappally, Mevaram Jn, Kollam, Kerala 691589
+                    </p>
+                    <a href="tel:+917558022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 75580 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Branch 11 -->
+              <div class="branch-card" data-index="10">
+                <img
+                  src="images/branch-11.webp"
+                  alt="Mandi Manzil Karunagappally"
+                  class="branch-image"
+                />
+                <div class="branch-content">
+                  <div class="branch-number">11</div>
+                  <div class="branch-info">
+                    <h3 class="branch-name">Mandi Manzil — Karunagappally</h3>
+                    <p class="branch-district">Kollam</p>
+                    <p class="branch-address">
+                      Opposite Krishna Theater, Market Road, Karunagappally,
+                      Kollam
+                    </p>
+                    <a href="tel:+917736022055" class="branch-phone">
+                      <i class="fas fa-phone"></i> +91 77360 22055
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TESTIMONIALS SECTION ===== -->
+      <section class="section testimonials" id="testimonials">
+        <div class="container">
+          <div class="testimonials-header fade-up">
+            <span class="section-eyebrow">What People Say</span>
+            <h2 class="section-title">Our <span>Customers</span> Love Us</h2>
+            <div class="gold-divider" style="margin: 1.5rem auto"></div>
+            <p class="section-subtitle">
+              Hear from our satisfied customers who have experienced the
+              quality, flavor, and warmth of Mandi Manzil.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card fade-up">
+              <span class="testimonial-quote">"</span>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                One of the best mandi restaurants in Trivandrum. Mandi rice is
+                rich in flavor, and different varieties of alfaham are
+                available. Reasonable rate with huge portion size and parking
+                also available.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">R</div>
+                <div class="author-details">
+                  <h4>Riya Vincent</h4>
+                  <span>📍 Ulloor, Trivandrum</span>
+                </div>
+                <div class="google-badge">
+                  <i class="fab fa-google"></i> Google Review
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card fade-up fade-up-delay-1">
+              <span class="testimonial-quote">"</span>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                The ambience is clean and welcoming, and the staff are friendly
+                and attentive. Whether you're dining in with family or ordering
+                takeout, the quality remains top-notch. Easily one of the best
+                spots in the area for a satisfying and flavorful meal.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">S</div>
+                <div class="author-details">
+                  <h4>Sreyas VS</h4>
+                  <span>📍 Chalakudy, Thrissur</span>
+                </div>
+                <div class="google-badge">
+                  <i class="fab fa-google"></i> Google Review
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card fade-up fade-up-delay-2">
+              <span class="testimonial-quote">"</span>
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">
+                This is the best mandi I have ever had in my life. Don't miss
+                this heaven. I recommend the green chilly alfaham — it was just
+                wow. You'll have unlimited mayonnaise here. If you ever get a
+                chance, don't miss it. Just explore it.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">A</div>
+                <div class="author-details">
+                  <h4>Abhinand VS</h4>
+                  <span>📍 Kazhakkoottam, Trivandrum</span>
+                </div>
+                <div class="google-badge">
+                  <i class="fab fa-google"></i> Google Review
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT SECTION ===== -->
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="contact-layout">
+            <!-- LEFT: Contact Info -->
+            <div class="contact-info fade-up">
+              <span class="section-eyebrow">Get In Touch</span>
+              <h2>Let's Talk <span>Food</span></h2>
+              <div class="gold-divider"></div>
+              <p>
+                Have a question, a special request, or want to book a table?
+                We'd love to hear from you. Reach out and we'll get back to you
+                as soon as possible.
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-detail">
+                  <div class="contact-detail-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-detail-text">
+                    <h4>Call Us</h4>
+                    <a href="tel:+916235022055">+91 62350 22055</a>
+                    <p style="font-size: 0.75rem; margin-top: 0.2rem">
+                      Calicut branch (Head Office)
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-detail">
+                  <div class="contact-detail-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-detail-text">
+                    <h4>Find Us</h4>
+                    <p>11 Branches across Kerala</p>
+                    <a href="#branches">View all locations →</a>
+                  </div>
+                </div>
+
+                <div class="contact-detail">
+                  <div class="contact-detail-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-detail-text">
+                    <h4>Opening Hours</h4>
+                    <p>Open Daily · All Week</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="contact-socials">
+                <a
+                  href="https://www.facebook.com/mandimanzil"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                >
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/mandimanzil"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-link"
+                >
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT: Contact Form -->
+            <div class="contact-form-wrapper fade-up fade-up-delay-1">
+              <h3>Send Us a Message</h3>
+              <p>We'll get back to you within 24 hours.</p>
+
+              <!-- Form -->
+              <form id="contactFormArea" onsubmit="return false;">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input
+                      type="text"
+                      id="fname"
+                      placeholder="Your first name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input
+                      type="text"
+                      id="lname"
+                      placeholder="Your last name"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" placeholder="+91 00000 00000" />
+                </div>
+
+                <div class="form-group">
+                  <label for="branch">Nearest Branch</label>
+                  <select id="branch">
+                    <option value="">Select a branch...</option>
+                    <option>Calicut — Kozhikode</option>
+                    <option>Kaipamangalam — Thrissur</option>
+                    <option>Chalakkudy — Thrissur</option>
+                    <option>Perambra — Thrissur</option>
+                    <option>Kazhakootam — Thiruvananthapuram</option>
+                    <option>Mettukada — Thiruvananthapuram</option>
+                    <option>Ulloor — Thiruvananthapuram</option>
+                    <option>Karyavattom — Thiruvananthapuram</option>
+                    <option>Kadappakada — Kollam</option>
+                    <option>Mevaram — Kollam</option>
+                    <option>Karunagappally — Kollam</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea
+                    id="message"
+                    placeholder="Tell us how we can help you..."
+                  ></textarea>
+                </div>
+
+                <button class="form-submit" id="submitBtn">
+                  Send Message &nbsp; <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+
+              <!-- Success Message (shown after submit) -->
+              <div class="form-success" id="formSuccess">
+                <i class="fas fa-check-circle"></i>
+                <h4>Message Sent!</h4>
+                <p>
+                  Thank you for reaching out. We'll get back to you within 24
+                  hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== LIGHTBOX ===== -->
+      <div class="lightbox" id="lightbox">
+        <div class="lightbox-inner" id="lightboxInner">
+          <button class="lightbox-close" id="lightboxClose">
+            <i class="fas fa-times"></i>
+          </button>
+          <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+          <div class="lightbox-body">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDesc"></p>
+            <span class="lightbox-tag" id="lightboxTag"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 3D CAROUSEL OVERLAY =====
+     Paste this just before </main>
+===== -->
+      <div class="carousel-overlay" id="carouselOverlay">
+        <div class="carousel-inner" id="carouselInner">
+          <p class="carousel-eyebrow">Our Signature Dishes</p>
+          <h2 class="carousel-title">Chef's <em>Special</em> Picks</h2>
+
+          <div class="stage">
+            <div class="track" id="carouselTrack"></div>
+          </div>
+
+          <!-- Scroll controls -->
+          <div class="carousel-scroll-btn">
+            <div class="c-arrow" id="carouselPrev"></div>
+            <div class="c-scroll-track">
+              <div class="c-scroll-progress" id="carouselProgress"></div>
+            </div>
+            <div class="c-arrow" id="carouselNext"></div>
+          </div>
+
+          <!-- Description -->
+          <div class="carousel-desc">
+            <h3 id="carouselTitle"></h3>
+            <p id="carouselDesc"></p>
+            <span class="c-tag" id="carouselTag"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <!-- Column 1: Brand -->
+            <div class="footer-brand">
+              <a href="#home" class="nav-logo">
+                <img src="images/logo.png" alt="Mandi Manzil Logo" />
+                <div class="nav-logo-text">
+                  <span class="brand">Mandi Manzil</span>
+                  <span class="since">Since 2016</span>
+                </div>
+              </a>
+              <p>
+                Kerala's original destination for authentic Arabic Mandi.
+                Serving tradition, hospitality, and unforgettable flavors across
+                11 locations since 2016.
+              </p>
+              <div class="footer-socials">
+                <a
+                  href="https://www.facebook.com/mandimanzil"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-social-btn"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/mandimanzil"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-social-btn"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram" style="font-size: 1.1rem"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+              <h4>Quick Links</h4>
+              <div class="footer-links">
+                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="#about"
+                  ><i class="fas fa-chevron-right"></i> About Us</a
+                >
+                <a href="#menu"
+                  ><i class="fas fa-chevron-right"></i> Our Menu</a
+                >
+                <a href="#branches"
+                  ><i class="fas fa-chevron-right"></i> Branches</a
+                >
+                <a href="#contact"
+                  ><i class="fas fa-chevron-right"></i> Contact Us</a
+                >
+              </div>
+            </div>
+
+            <!-- Column 3: Contact -->
+            <div class="footer-col">
+              <h4>Contact Us</h4>
+              <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>
+                  <a href="tel:+916235022055">+91 62350 22055</a><br />
+                  <small style="font-size: 0.75rem; opacity: 0.7"
+                    >Calicut — Head Office</small
+                  >
+                </span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>
+                  <a href="mailto:info@mandimanzil.com">info@mandimanzil.com</a>
+                </span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>11 Branches across Kerala,<br />South India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p>&copy; 2026 <span>Mandi Manzil</span>. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+              <p>Designed & Developed by</p>
+              <a href="#">Ameen</a>
+              <p>· Freelance Web Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ================================================
+         JAVASCRIPT
+    ================================================ -->
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
