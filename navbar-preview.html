@@ -13,13 +13,15 @@
       --gold-light: #E8C97A;
       --gold-dark: #B8923F;
       --charcoal: #1A1A1A;
-      --cream: #FDF8F0;
       --white: #FFFFFF;
       --white-alpha-80: rgba(255, 255, 255, 0.8);
       --white-alpha-60: rgba(255, 255, 255, 0.6);
+      --white-alpha-40: rgba(255, 255, 255, 0.4);
       --white-alpha-20: rgba(255, 255, 255, 0.2);
       --white-alpha-10: rgba(255, 255, 255, 0.1);
+      --white-alpha-05: rgba(255, 255, 255, 0.05);
       --black-alpha-40: rgba(0, 0, 0, 0.4);
+      --black-alpha-30: rgba(0, 0, 0, 0.3);
       --black-alpha-20: rgba(0, 0, 0, 0.2);
       
       --font-brand: 'Instrument Serif', serif;
@@ -34,11 +36,7 @@
       --space-2xl: 3rem;
       
       --nav-height: 5rem;
-      --nav-height-scrolled: 3.75rem;
-      --nav-padding-x: 1.5rem;
-      --nav-margin-y: 1rem;
-      --nav-margin-y-scrolled: 0.75rem;
-      --nav-margin-x: 2rem;
+      --nav-height-scrolled: 4rem;
       --nav-max-width: 85rem;
       
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -70,6 +68,7 @@
       overflow-x: hidden;
     }
 
+    /* ========== NAVBAR ========== */
     .navbar {
       position: fixed;
       top: 0;
@@ -78,13 +77,12 @@
       z-index: var(--z-nav);
       display: flex;
       justify-content: center;
-      padding: var(--nav-margin-y) var(--nav-margin-x);
-      transition: 
-        padding var(--duration-slow) var(--ease-out-expo);
+      padding: 1rem 2rem;
+      transition: padding var(--duration-slow) var(--ease-out-expo);
     }
 
     .navbar.scrolled {
-      --nav-margin-y: var(--nav-margin-y-scrolled);
+      padding: 0.75rem 2rem;
     }
 
     .navbar-container {
@@ -96,34 +94,41 @@
       align-items: center;
       gap: var(--space-xl);
       padding: 0 var(--space-lg);
-      background: rgba(26, 26, 26, 0.75);
-      backdrop-filter: blur(1.25rem) saturate(180%);
-      -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
-      border-radius: 0;
+      
+      /* Default: fully transparent, no box */
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
       border: none;
-      box-shadow: 0 0 0 0 transparent;
+      border-radius: 0;
+      box-shadow: none;
+      
       transition: 
         height var(--duration-slow) var(--ease-out-expo),
         background var(--duration-normal) var(--ease-out-expo),
+        backdrop-filter var(--duration-normal) var(--ease-out-expo),
         border-radius var(--duration-slow) var(--ease-spring),
         box-shadow var(--duration-normal) var(--ease-out-expo);
     }
 
+    /* Scrolled: glassmorphism box appears */
     .navbar.scrolled .navbar-container {
       height: var(--nav-height-scrolled);
-      background: rgba(26, 26, 26, 0.85);
+      background: rgba(26, 26, 26, 0.8);
+      backdrop-filter: blur(1.25rem) saturate(180%);
+      -webkit-backdrop-filter: blur(1.25rem) saturate(180%);
+      border: 0.03125rem solid var(--white-alpha-10);
       border-radius: 0.75rem;
       box-shadow: 
-        0 0 0 0.03125rem rgba(255, 255, 255, 0.05),
-        0 1rem 2rem rgba(0, 0, 0, 0.3);
+        0 0.5rem 1rem var(--black-alpha-20),
+        0 1.5rem 3rem var(--black-alpha-30);
     }
 
+    /* ========== LOGO (LEFT) ========== */
     .navbar-logo {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
       text-decoration: none;
-      color: var(--white);
       position: relative;
       z-index: 1;
     }
@@ -138,14 +143,7 @@
       height: 2rem;
     }
 
-    .navbar-logo-text {
-      font-family: var(--font-brand);
-      font-size: 1.25rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: var(--white);
-    }
-
+    /* ========== NAVIGATION (CENTER) ========== */
     .navbar-nav {
       display: flex;
       align-items: center;
@@ -192,6 +190,7 @@
       transform: scaleX(1);
     }
 
+    /* ========== ACTIONS (RIGHT) ========== */
     .navbar-actions {
       display: flex;
       align-items: center;
@@ -222,12 +221,12 @@
     .navbar-btn-outline {
       background: transparent;
       color: var(--white);
-      border: 0.0625rem solid var(--white-alpha-20);
+      border: 0.0625rem solid var(--white-alpha-40);
     }
 
     .navbar-btn-outline:hover {
       background: var(--white-alpha-10);
-      border-color: var(--white-alpha-60);
+      border-color: var(--white-alpha-80);
     }
 
     .navbar-btn-filled {
@@ -246,6 +245,7 @@
       height: 1rem;
     }
 
+    /* ========== MOBILE TOGGLE ========== */
     .navbar-toggle {
       display: none;
       flex-direction: column;
@@ -254,9 +254,8 @@
       width: 2.5rem;
       height: 2.5rem;
       padding: 0.5rem;
-      background: var(--white-alpha-10);
+      background: transparent;
       border: none;
-      border-radius: 0.5rem;
       cursor: pointer;
       position: relative;
       z-index: 1;
@@ -284,6 +283,7 @@
       transform: translateY(-0.5rem) rotate(-45deg);
     }
 
+    /* ========== MOBILE MENU ========== */
     .navbar-mobile {
       position: fixed;
       top: 0;
@@ -349,6 +349,7 @@
       transform: translateY(0);
     }
 
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 64rem) {
       .navbar-nav {
         display: none;
@@ -368,15 +369,12 @@
     }
 
     @media (max-width: 30rem) {
-      :root {
-        --nav-margin-x: 1rem;
-      }
-
-      .navbar-logo-text {
-        font-size: 1rem;
+      .navbar {
+        padding: 1rem;
       }
     }
 
+    /* ========== HERO ========== */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -439,11 +437,12 @@
 
   <nav class="navbar" id="navbar">
     <div class="navbar-container">
+      <!-- Logo (LEFT) -->
       <a href="#" class="navbar-logo">
         <img src="https://raw.githubusercontent.com/al7ameen/mandi-manzil/main/images/logo.png" alt="Mandi Manzil">
-        <span class="navbar-logo-text">Mandi Manzil</span>
       </a>
 
+      <!-- Navigation (CENTER) -->
       <ul class="navbar-nav">
         <li><a href="#home" class="navbar-link active">Home</a></li>
         <li><a href="#about" class="navbar-link">About</a></li>
@@ -453,6 +452,7 @@
         <li><a href="#contact" class="navbar-link">Contact</a></li>
       </ul>
 
+      <!-- Actions (RIGHT) -->
       <div class="navbar-actions">
         <a href="#faq" class="navbar-btn navbar-btn-outline">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -470,6 +470,7 @@
         </a>
       </div>
 
+      <!-- Mobile Toggle -->
       <button class="navbar-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -478,6 +479,7 @@
     </div>
   </nav>
 
+  <!-- Mobile Menu -->
   <div class="navbar-mobile" id="navMobile">
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -491,6 +493,7 @@
     </div>
   </div>
 
+  <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Timeless Tastes,<br>Shared Traditions</h1>
@@ -498,27 +501,23 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" style="min-height: 100vh; padding: 8rem 2rem; background: var(--charcoal);">
     <h2 style="font-family: var(--font-brand); font-size: 3rem; text-align: center; margin-bottom: 2rem;">About Section</h2>
-    <p style="text-align: center; max-width: 40rem; margin: 0 auto; color: var(--white-alpha-60);">Scroll to see the navbar transform with subtle border-radius on scrolled state.</p>
+    <p style="text-align: center; max-width: 40rem; margin: 0 auto; color: var(--white-alpha-60);">Scroll up and down to see the navbar transition from fully transparent to a glassmorphism box.</p>
   </section>
 
   <script>
     const navbar = document.getElementById('navbar');
     const toggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('navMobile');
-    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      
-      if (currentScroll > 50) {
+      if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
-      
-      lastScroll = currentScroll;
     }, { passive: true });
 
     toggle.addEventListener('click', () => {
