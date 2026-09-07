@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mandi Manzil — Navbar v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Space+Grotesk:wght@300..600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #c9a24b;
+    --gold-soft: rgba(201, 162, 75, 0.18);
+    --ink: #f4efe6;
+    --ink-dim: rgba(244, 239, 230, 0.62);
+    --glass-bg: rgba(18, 16, 14, 0.42);
+    --glass-bg-scrolled: rgba(14, 12, 11, 0.68);
+    --rail-h: 4.75rem;
+    --max-w: 76rem;
+    --font-brand: 'Marcellus', serif;
+    --font-ui: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-ui);
+    color: var(--ink);
+    background: #0c0a09;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- HERO (just a backdrop to test the bar) ---------- */
+  .hero {
+    min-height: 150vh;
+    background:
+      linear-gradient(180deg, rgba(8,7,6,0.55) 0%, rgba(8,7,6,0.25) 40%, rgba(8,7,6,0.85) 100%),
+      url('images/alfaham-mandi.jpg') center 20% / cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--font-brand);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-shadow: 0 0.25rem 1.5rem rgba(0,0,0,0.5);
+  }
+  .hero p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--ink-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- NAVBAR ---------- */
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+    height: var(--rail-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.25rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    border-bottom: 0.0625rem solid rgba(255,255,255,0.06);
+    /* default: flush bar, no radius */
+    border-radius: 0;
+    transform: translateY(0);
+    transition: background 0.5s ease, border-radius 0.55s cubic-bezier(.2,.8,.2,1),
+                backdrop-filter 0.5s ease, height 0.45s ease, padding 0.45s ease,
+                box-shadow 0.5s ease, max-width 0.55s cubic-bezier(.2,.8,.2,1),
+                margin-top 0.55s cubic-bezier(.2,.8,.2,1);
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* liquid sheen — a soft top highlight that reads as curved glass */
+  .nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 42%);
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+  /* specular blob */
+  .nav::after {
+    content: "";
+    position: absolute;
+    top: -0.125rem; left: 18%;
+    width: 9rem; height: 4rem;
+    background: radial-gradient(closest-side, rgba(255,255,255,0.14), rgba(255,255,255,0) 70%);
+    filter: blur(0.5rem);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  /* scrolled: becomes a centered, rounded, floating liquid glass container */
+  .nav.scrolled {
+    height: 4rem;
+    margin-top: 0.9rem;
+    max-width: var(--max-w);
+    border-radius: 1rem;
+    background: var(--glass-bg-scrolled);
+    backdrop-filter: blur(22px) saturate(175%);
+    -webkit-backdrop-filter: blur(22px) saturate(175%);
+    border-bottom: none;
+    box-shadow:
+      0 0.75rem 2.5rem rgba(0,0,0,0.45),
+      inset 0 0.0625rem 0 rgba(255,255,255,0.12),
+      inset 0 -0.0625rem 0.5rem rgba(0,0,0,0.4);
+  }
+  .nav.scrolled::before { opacity: 0.9; }
+  .nav.scrolled::after { opacity: 0.65; }
+
+  .nav-inner {
+    width: 100%;
+    max-width: var(--max-w);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* LOGO — left */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+  }
+  .nav-logo img {
+    height: 2.6rem;
+    width: auto;
+    transition: height 0.45s ease;
+    filter: drop-shadow(0 0.125rem 0.4rem rgba(0,0,0,0.5));
+  }
+  .nav.scrolled .nav-logo img { height: 2.2rem; }
+
+  /* LINKS — center */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.1rem;
+    list-style: none;
+    justify-self: center;
+  }
+  .nav-links a {
+    position: relative;
+    font-family: var(--font-ui);
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+    text-decoration: none;
+    padding: 0.35rem 0;
+    transition: color 0.3s ease;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 0.0625rem;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s ease;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* ACTIONS — right */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-self: end;
+  }
+  .btn {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding: 0.55rem 1.15rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 0.0625rem solid rgba(244,239,230,0.28);
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold), #e0bd6b);
+    color: #1a1408;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 0.35rem 1rem rgba(201,162,75,0.28);
+  }
+  .btn-gold:hover {
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 0.5rem 1.3rem rgba(201,162,75,0.4);
+  }
+
+  /* HAMBURGER — hidden on desktop */
+  .nav-burger {
+    display: none;
+    justify-self: end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 2.4rem; height: 2.4rem;
+    position: relative;
+  }
+  .nav-burger span {
+    position: absolute;
+    left: 0.4rem; right: 0.4rem;
+    height: 0.125rem;
+    background: var(--ink);
+    border-radius: 1rem;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+  }
+  .nav-burger span:nth-child(1) { top: 0.75rem; }
+  .nav-burger span:nth-child(2) { top: 1.15rem; }
+  .nav-burger span:nth-child(3) { top: 1.55rem; }
+  .nav-burger.open span:nth-child(1) { transform: translateY(0.4rem) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-0.4rem) rotate(-45deg); }
+
+  /* MOBILE MENU */
+  .nav-mobile {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,9,8,0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .nav-mobile.open { opacity: 1; pointer-events: auto; }
+  .nav-mobile a {
+    font-family: var(--font-ui);
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .nav-mobile a:hover { color: var(--gold); }
+  .nav-mobile-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    font-size: 1.15rem;
+    text-decoration: none;
+    margin-top: 0.4rem;
+  }
+  .nav-mobile-phone svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
+  .nav-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.6rem;
+    width: 14rem;
+  }
+  .nav-mobile-actions .btn { text-align: center; }
+  .nav-mobile-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .nav-mobile-social a {
+    width: 2.6rem; height: 2.6rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--gold-soft);
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 56rem) {
+    .nav-links, .nav-actions { display: none; }
+    .nav-burger { display: block; }
+    .nav-inner { grid-template-columns: 1fr auto; }
+    .nav-logo { justify-self: start; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" aria-label="Mandi Manzil home">
+      <img src="images/logo.png" alt="Mandi Manzil" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="#faq">FAQ</a>
+      <a class="btn btn-gold" href="https://wa.me/919162350205">Order Now</a>
+    </div>
+
+    <button class="nav-burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#menu">Menu</a>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+  <a class="nav-mobile-phone" href="tel:+919162350205">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+    +91 91623 50205
+  </a>
+  <div class="nav-mobile-actions">
+    <a class="btn btn-ghost" href="#faq">FAQ</a>
+    <a class="btn btn-gold" href="https://wa.me/919162350205">Order Now</a>
+  </div>
+  <div class="nav-mobile-social">
+    <a href="https://www.instagram.com/mandimanzil/" aria-label="Instagram">IG</a>
+    <a href="https://www.facebook.com/mandimanzil/" aria-label="Facebook">FB</a>
+  </div>
+</div>
+
+<header class="hero" id="home">
+  <div>
+    <h1>Mandi Manzil</h1>
+    <p>Scroll to watch the bar tighten into a floating liquid-glass pill.</p>
+  </div>
+</header>
+
+<script>
+  const nav = document.getElementById('nav');
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    lastY = y;
+  }, { passive: true });
+
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    })
+  );
+</script>
+</body>
+</html>
