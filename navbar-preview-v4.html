@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navbar v4 — Emerald & Copper Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --emerald-950:#0b2b20;
+  --emerald-900:#0e3a2c;
+  --emerald-800:#12493a;
+  --copper:#c98a4b;
+  --copper-light:#e0aa72;
+  --cream:#f4efe6;
+  --cream-dim:rgba(244,239,230,0.72);
+  --glass-emerald:rgba(14,58,44,0.92);
+  --font-brand:'Fraunces',serif;
+  --font-nav:'Sora',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-nav);background:var(--emerald-950);color:var(--cream)}
+
+/* ============ NAVBAR — EDITORIAL SPLIT ============ */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 3rem;
+  background:transparent;
+  transition:background .35s ease,padding .35s ease,box-shadow .35s ease;
+}
+.navbar.scrolled{
+  background:var(--glass-emerald);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:0.7rem 3rem;
+  box-shadow:0 0.25rem 1.5rem rgba(0,0,0,0.35);
+  border-bottom:0.0625rem solid transparent;
+  border-image:linear-gradient(90deg,transparent,var(--copper),transparent) 1;
+}
+
+/* LOGO — left */
+.navbar-logo img{height:3.4rem;width:auto;display:block;transition:height .3s ease}
+.navbar.scrolled .navbar-logo img{height:2.9rem}
+
+/* LINKS — center, editorial letter-spaced */
+.navbar-links{display:flex;gap:2.2rem;align-items:center;list-style:none}
+.nav-link{
+  font-family:var(--font-nav);font-weight:400;
+  font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--cream-dim);text-decoration:none;position:relative;
+  padding:0.3rem 0;transition:color .25s ease;
+}
+.nav-link::after{
+  content:'';position:absolute;left:0;bottom:0;height:0.0625rem;width:0;
+  background:var(--copper);transition:width .3s ease;
+}
+.nav-link:hover{color:var(--cream)}
+.nav-link:hover::after{width:100%}
+
+/* COPPER VERTICAL DIVIDER between logo and links */
+.navbar-divider{width:0.0625rem;height:1.8rem;background:linear-gradient(180deg,transparent,var(--copper),transparent);margin:0 1.5rem}
+
+/* ACTIONS — right */
+.navbar-actions{display:flex;gap:0.9rem;align-items:center}
+.btn-faq{
+  font-family:var(--font-nav);font-size:0.8rem;letter-spacing:0.1em;
+  padding:0.6rem 1.3rem;border-radius:2rem;
+  border:0.0625rem solid var(--copper);background:transparent;
+  color:var(--copper-light);text-decoration:none;
+  transition:background .25s ease,color .25s ease;
+}
+.btn-faq:hover{background:rgba(201,138,75,0.12)}
+.btn-order{
+  font-family:var(--font-nav);font-size:0.8rem;letter-spacing:0.1em;
+  padding:0.6rem 1.5rem;border-radius:2rem;
+  background:linear-gradient(135deg,var(--copper),var(--copper-light));
+  color:var(--emerald-950);font-weight:600;text-decoration:none;
+  border:none;transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn-order:hover{transform:translateY(-0.1rem);box-shadow:0 0.4rem 1rem rgba(201,138,75,0.3)}
+
+/* HAMBURGER */
+.navbar-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:0.4rem;padding:0.5rem}
+.navbar-toggle span{width:1.6rem;height:0.125rem;background:var(--cream);border-radius:0.125rem;transition:all .3s ease}
+.navbar-toggle.active span:nth-child(1){transform:translateY(0.525rem) rotate(45deg)}
+.navbar-toggle.active span:nth-child(2){opacity:0}
+.navbar-toggle.active span:nth-child(3){transform:translateY(-0.525rem) rotate(-45deg)}
+
+/* MOBILE PANEL */
+.navbar-mobile{
+  position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;
+  background:var(--emerald-900);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;
+}
+.navbar-mobile.active{opacity:1;pointer-events:auto}
+.navbar-mobile a.m-link{
+  font-family:var(--font-brand);font-size:1.5rem;color:var(--cream);
+  text-decoration:none;letter-spacing:0.05em;
+}
+.navbar-mobile .m-phone{
+  font-family:var(--font-nav);font-size:1rem;color:var(--copper-light);
+  text-decoration:none;display:flex;align-items:center;gap:0.5rem;
+}
+.navbar-mobile .m-social{display:flex;gap:1.2rem;margin-top:1rem}
+.navbar-mobile .m-social a{
+  width:2.6rem;height:2.6rem;border-radius:50%;
+  border:0.0625rem solid var(--copper);display:flex;align-items:center;justify-content:center;
+  color:var(--copper-light);text-decoration:none;font-size:1rem;
+}
+.navbar-close{position:absolute;top:1.4rem;right:1.6rem;background:none;border:none;color:var(--cream);font-size:2rem;cursor:pointer;font-family:var(--font-nav)}
+
+@media(max-width:56.25em){
+  .navbar{padding:1rem 1.4rem}
+  .navbar.scrolled{padding:0.7rem 1.4rem}
+  .navbar-links,.navbar-actions{display:none}
+  .navbar-divider{display:none}
+  .navbar-toggle{display:flex}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="#" class="navbar-logo"><img src="images/logo.png" alt="Mandi Manzil"></a>
+  <div class="navbar-divider"></div>
+  <ul class="navbar-links">
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#menu" class="nav-link">Menu</a></li>
+    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+    <li><a href="#branches" class="nav-link">Branches</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <a href="#faq" class="btn-faq">FAQ</a>
+    <a href="#order" class="btn-order">Order Now</a>
+  </div>
+  <button class="navbar-toggle" id="navbarToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="navbar-mobile" id="navbarMobile">
+  <button class="navbar-close" id="navbarClose">&times;</button>
+  <a href="#about" class="m-link">About</a>
+  <a href="#menu" class="m-link">Menu</a>
+  <a href="#gallery" class="m-link">Gallery</a>
+  <a href="#branches" class="m-link">Branches</a>
+  <a href="#contact" class="m-link">Contact</a>
+  <a href="tel:+919162350205" class="m-phone">+91 91623 50205</a>
+  <div class="m-social">
+    <a href="https://www.instagram.com/mandimanzil/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+    <a href="https://www.facebook.com/mandimanzil/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+  </div>
+</div>
+
+<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;background:linear-gradient(rgba(11,43,32,0.75),rgba(11,43,32,0.9)),url('images/alfaham-mandi.jpg') center/cover">
+  <div>
+    <p style="font-family:var(--font-nav);font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper-light);margin-bottom:1.2rem">Since 2016 · Kasaragod</p>
+    <h1 style="font-family:var(--font-brand);font-size:3.2rem;font-weight:500;color:var(--cream);line-height:1.15;max-width:56rem">The Art of Arabian Mandi,<br>Reimagined</h1>
+  </div>
+</section>
+<section style="height:60vh;display:flex;align-items:center;justify-content:center"><p style="color:var(--cream-dim);font-size:0.9rem">Scroll to see the glass effect</p></section>
+
+<script>
+const nav=document.getElementById('navbar');
+const toggle=document.getElementById('navbarToggle');
+const mobile=document.getElementById('navbarMobile');
+const closeBtn=document.getElementById('navbarClose');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+toggle.addEventListener('click',()=>{mobile.classList.add('active');toggle.classList.add('active')});
+closeBtn.addEventListener('click',()=>{mobile.classList.remove('active');toggle.classList.remove('active')});
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.classList.remove('active');toggle.classList.remove('active')}));
+</script>
+</body>
+</html>
