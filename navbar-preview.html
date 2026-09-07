@@ -6,7 +6,7 @@
   <title>Mandi Manzil — Premium Navbar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --gold: #D4A853;
@@ -24,9 +24,9 @@
       --black-alpha-30: rgba(0, 0, 0, 0.3);
       --black-alpha-20: rgba(0, 0, 0, 0.2);
       
-      --font-brand: 'Instrument Serif', serif;
-      --font-nav: 'Syne', sans-serif;
-      --font-body: 'Outfit', sans-serif;
+      --font-brand: 'Reem Kufi', serif;
+      --font-nav: 'Bricolage Grotesque', sans-serif;
+      --font-body: 'Bricolage Grotesque', sans-serif;
       
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
@@ -348,6 +348,38 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .navbar-mobile-social {
+      display: flex;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+      opacity: 0;
+      transform: translateY(1.25rem);
+      transition: all var(--duration-normal) var(--ease-out-expo) 0.4s;
+    }
+
+    .navbar-mobile-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      text-decoration: none;
+      transition: all var(--duration-fast) var(--ease-out-expo);
+    }
+
+    .navbar-mobile-social a:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-0.25rem);
+    }
+
+    .navbar-mobile.active .navbar-mobile-social {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 64rem) {
@@ -490,6 +522,14 @@
     <div class="navbar-mobile-actions">
       <a href="#faq" class="navbar-btn navbar-btn-outline">FAQ</a>
       <a href="https://wa.me/916235022055" class="navbar-btn navbar-btn-filled" target="_blank">Order Now</a>
+    </div>
+    <div class="navbar-mobile-social">
+      <a href="https://www.instagram.com/mandimanzil/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/mandimanzil/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a>
     </div>
   </div>
 
